@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNU CSE - AI Tools Directory | Umamaheshwari</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f8f9ff;color:#333}
+.header{background:white;padding:15px 20px;display:flex;justify-content:space-between;box-shadow:0 2px 10px #0001;position:sticky;top:0}
+.logo{font-weight:bold;font-size:20px;color:#7c5cff}
+.banner{background:linear-gradient(135deg,#7c5cff,#ff6ec7);color:white;padding:35px 20px;text-align:center}
+.banner h1{margin:0;font-size:28px}
+.banner p{opacity:0.9}
+.search-box{margin-top:15px;padding:12px 20px;border-radius:30px;border:none;width:80%;max-width:400px}
+.container{padding:15px}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.card{background:white;padding:12px;border-radius:12px;box-shadow:0 2px 8px #0001;border-left:4px solid #7c5cff}
+.card h4{margin:0 0 5px 0;font-size:14px}
+.tag{background:#eee8ff;color:#7c5cff;padding:2px 8px;border-radius:20px;font-size:10px}
+.footer{text-align:center;padding:25px;background:white;margin-top:20px;font-size:12px;color:#888}
+</style>
+</head>
+<body>
+<div class="header"><div class="logo">🚀 SNU AI Directory</div><div style="font-size:12px">GKS 2026</div></div>
+<div class="banner">
+<h1>Discover Best AI Tools</h1>
+<p>By Umamaheshwari | SNU CSE Project 2 | 40+ Tools Curated</p>
+<input id="search" class="search-box" placeholder="Search: ChatGPT, Coding, Design...">
+</div>
+<div class="container">
+<h3>🔥 Trending This Week</h3>
+<div id="trending" class="card-grid">Loading...</div>
+<h3 style="margin-top:20px">✍️ Writing & Content</h3>
+<div id="writing" class="card-grid"></div>
+<h3 style="margin-top:20px">🎨 New Tools</h3>
+<div id="newtools" class="card-grid"></div>
+</div>
+<div class="footer">© 2026 Umamaheshwari | SNU CSE Portfolio Project 2 | Built for GKS Application<br>Data from dealsbe.com | Chennai, India</div>
+<script>
+fetch('tools.json')
+.then(r=>r.json())
+.then(data=>{
+  document.getElementById('trending').innerHTML = data.trending_this_week.map(t=>`<div class="card"><h4>${t.name}</h4><span class="tag">${t.category}</span><br><small>⭐ ${t.rating} | ${t.pricing}</small></div>`).join('');
+  document.getElementById('writing').innerHTML = data.categories.writing_and_content.slice(0,6).map(n=>`<div class="card"><h4>${n}</h4><span class="tag">Writing</span></div>`).join('');
+  document.getElementById('newtools').innerHTML = data.new_tools.map(t=>`<div class="card"><h4>${t.name}</h4><small>Added: ${t.added_on}</small></div>`).join('');
+});
+document.getElementById('search').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(q)?'block':'none'});
+});
+</script>
+</body>
+  </html>
