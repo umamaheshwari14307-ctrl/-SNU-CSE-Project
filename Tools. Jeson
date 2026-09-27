@@ -1,0 +1,27 @@
+{
+  "project": "SNU CSE - AI Tools Directory - Project 2",
+  "author": "Umamaheshwari - GKS 2026",
+  "last_updated": "2026-04-27",
+  "trending_this_week": [
+    {"name": "ChatGPT", "category": "Writing", "rating": 4.9, "pricing": "Freemium"},
+    {"name": "Runway", "category": "Video", "rating": 4.8, "pricing": "Paid"},
+    {"name": "GitHub Copilot", "category": "Coding", "rating": 4.8, "pricing": "Paid"}
+  ],
+  "sponsors": [
+    {"name": "Perplexity Pro", "description": "AI research engine"},
+    {"name": "Framer AI", "description": "AI website builder"},
+    {"name": "GitHub Copilot", "description": "AI pair programmer"}
+  ],
+  "new_tools": [
+    {"name": "AdCreative.ai", "added_on": "2026-04-27"},
+    {"name": "Ocoya", "added_on": "2026-04-27"},
+    {"name": "Galileo AI", "added_on": "2026-04-26"},
+    {"name": "Motion", "added_on": "2026-04-25"},
+    {"name": "Bolt.new", "added_on": "2026-04-24"},
+    {"name": "Scite", "added_on": "2026-04-24"}
+  ],
+  "categories": {
+    "writing_and_content": ["ChatGPT", "Claude", "Gemini", "Jasper", "Copy.ai", "Writesonic", "Grammarly", "QuillBot", "Sudowrite", "Rytr", "Writer", "HyperWrite", "Wordtune", "Anyword", "ProWritingAid", "Perplexity Pages"],
+    "image_generation": ["Midjourney", "DALL-E 3", "Stable Diffusion", "Galileo AI"]
+  }
+}
